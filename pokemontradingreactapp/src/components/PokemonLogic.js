@@ -1,23 +1,22 @@
 import React from 'react';
 import '../App.css';
 
-class PokemonLogic extends React.Component {
-    costructor() {
+function PokemonLogic(props) {
+    return (
+        <div>
+            <div className = "pokeinfo">
+                <h3 id="name">{props.pokemon.name}</h3>
+                <h3 id="desc">{props.pokemon.description}</h3>
+                <h3 id="pkmnid">{props.pokemon.pkmnid}</h3>
 
-    }
-
-
-    render() {
-        return (
-            <div>
-                <div className = "pokeinfo">
-                    <h3 id="name">Name</h3>
-                    <h3 id="desc">Description</h3>
-                    <h3 id="pkmnid">Pokemon ID</h3>
-                </div>
+                <div className = "pokebuttons">
+                    <button>Buy</button>
+                    <button>Sell</button>
+                </div> 
+                
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 export default PokemonLogic;

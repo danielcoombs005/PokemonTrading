@@ -15,6 +15,19 @@
   padding: 20px;
 }
 
+button {
+  border-radius: 10px;
+  margin: 10px;
+  padding: 12px 24px;
+  text-align: center;
+}
+
+button:hover {
+  border: solid lightblue;
+  color: white;
+  background-color: rgb(32, 167, 212);
+}
+
 .pokeinfo {
   border: 1px solid black;
   padding: 100px;

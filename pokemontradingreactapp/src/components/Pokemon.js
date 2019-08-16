@@ -2,24 +2,31 @@ import React from 'react';
 import '../App.css';
 import PokemonLogic from './PokemonLogic';
 
-function Pokemon() {
-    return (
-        <div className = "pokemon">
-            <div className = "pokemon-boxes">
-                <PokemonLogic />
-                <PokemonLogic />
-                <PokemonLogic />
+class Pokemon extends React.Component {
+    
+    //insert fetch
+    
+    
 
-                <PokemonLogic />
-                <PokemonLogic />
-                <PokemonLogic />
-
-                <PokemonLogic />
-                <PokemonLogic />
-                <PokemonLogic />
+    render() {
+        return (
+            <div className = "pokemon">
+                <div className = "pokemon-boxes">  
+                    <PokemonLogic pokemon={{sprite: "", name:"name1", type:"type...", pkmnid:"pokemon id"}}/>
+                    <PokemonLogic pokemon={{name:"name2", description:"description...", pkmnid:"pokemon id"}}/>
+                    <PokemonLogic pokemon={{name:"name3", description:"description...", pkmnid:"pokemon id"}}/>
+    
+                    <PokemonLogic pokemon={{name:"name", description:"description...", pkmnid:"pokemon id"}}/>
+                    <PokemonLogic pokemon={{name:"name", description:"description...", pkmnid:"pokemon id"}}/>
+                    <PokemonLogic pokemon={{name:"name", description:"description...", pkmnid:"pokemon id"}}/>
+    
+                    <PokemonLogic pokemon={{name:"name", description:"description...", pkmnid:"pokemon id"}}/>
+                    <PokemonLogic pokemon={{name:"name", description:"description...", pkmnid:"pokemon id"}}/>
+                    <PokemonLogic pokemon={{name:"name", description:"description...", pkmnid:"pokemon id"}}/>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
 export default Pokemon;
