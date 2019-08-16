@@ -3,16 +3,30 @@ import '../App.css';
 import PokemonLogic from './PokemonLogic';
 
 class Pokemon extends React.Component {
-    
+    constructor() {
+        super();
+        this.state = {
+            pokemon: {}
+        }
+    }
+
     //insert fetch
-    
+    componentDidMount() {
+        fetch("http://localhost:5000/api/values")
+            .then(response => response.json())
+            .then(data => {
+                this.setState({
+                    pokemon: data
+                })
+            })
+    }
 
 
     render() {
         return (
             <div className = "pokemon">
                 <div className = "pokemon-boxes">  
-                    <PokemonLogic pokemon={{sprite: "http://i.imgur.com/wJw46bi.png", name:"name1", type:"type...", pkmnid:"pokemon id"}}/>
+                    <PokemonLogic pokemon={this.state.pokemon}/>
                     <PokemonLogic pokemon={{sprite: "http://i.imgur.com/wJw46bi.png", name:"name2", type:"type...", pkmnid:"pokemon id"}}/>
                     <PokemonLogic pokemon={{sprite: "http://i.imgur.com/wJw46bi.png", name:"name3", type:"type...", pkmnid:"pokemon id"}}/>
     
