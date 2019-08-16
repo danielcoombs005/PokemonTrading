@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonTradingWebApi", "PokemonTradingWebApi\PokemonTradingWebApi.csproj", "{E3FAB4FA-821F-4B6D-8C08-9665B00E972A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokemonTradingWebApi", "PokemonTradingWebApi\PokemonTradingWebApi.csproj", "{E3FAB4FA-821F-4B6D-8C08-9665B00E972A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "External_PokemonApi", "External_PokemonApi\External_PokemonApi.csproj", "{FFF25972-3ACB-4793-B79F-112BD618D11E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{E3FAB4FA-821F-4B6D-8C08-9665B00E972A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3FAB4FA-821F-4B6D-8C08-9665B00E972A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3FAB4FA-821F-4B6D-8C08-9665B00E972A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFF25972-3ACB-4793-B79F-112BD618D11E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFF25972-3ACB-4793-B79F-112BD618D11E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFF25972-3ACB-4793-B79F-112BD618D11E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFF25972-3ACB-4793-B79F-112BD618D11E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
