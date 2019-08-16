@@ -7,31 +7,22 @@
   text-shadow: 3px 0 blue
 }
 
-.pokemon-boxes {
-  display: grid;
-  grid-column-gap: 50px;
-  grid-row-gap: 80px;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 20px;
-}
-
-button {
-  border-radius: 10px;
-  margin: 10px;
-  padding: 12px 24px;
+.pokebuttons {
   text-align: center;
-}
-
-button:hover {
-  border: solid lightblue;
-  color: white;
-  background-color: rgb(32, 167, 212);
 }
 
 .pokeinfo {
   border: 1px solid black;
-  padding: 100px;
+  padding: 10px;
   margin: 25px;
+}
+
+.pokemon-boxes {
+  display: grid;
+  grid-column-gap: 50px;
+  grid-row-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 20px;
 }
 
 #desc {
@@ -46,4 +37,26 @@ button:hover {
 
 #pkmnid {
   font-style: bold;
+}
+
+button {
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  text-align: center;
+}
+
+button:hover {
+  border: solid lightblue;
+  color: white;
+  background-color: rgb(32, 167, 212);
+}
+
+img {
+  display: block;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10%;
+  width: 200px;
 }
