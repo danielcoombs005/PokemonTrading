@@ -8,6 +8,11 @@ namespace External_PokemonApi
     {
         public Uri BaseUri = new Uri("https://pokeapi.co/api/v2/");
 
+        public class Pokemon
+        {
+            public string name { get; set; }
+
+        }
         public string getPokeName()
         {
 
@@ -32,15 +37,13 @@ namespace External_PokemonApi
 
                     JToken json_pokeName = pokeObject["species"]["name"];
 
-                    //WeatherJSON weatherJson = results.ToObject<WeatherJSON>();
-                    //Weather weather = new Weather() { type = weatherJson.main, description = weatherJson.description };
+                    Pokemon pokemon = new Pokemon() { name = json_pokeName.ToString() };
 
-                    //return weather;
+                    return pokemon.name;
                 }
+                else
+                    return null;
             }
-            return "ok";
         }
-        //need to get pokemon info
-        //then transfer information to our trading api.
     }
 }
