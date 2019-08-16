@@ -10,10 +10,13 @@ namespace External_PokemonApi
 
         public class Pokemon
         {
+            public int id { get; set; }
             public string name { get; set; }
-
+            public string type { get; set; }
+            public string sprite { get; set; }
+            
         }
-        public string getPokeName()
+        public Pokemon getPokeName()
         {
 
             using (HttpClient client = new HttpClient())
@@ -36,13 +39,15 @@ namespace External_PokemonApi
                     JObject pokeObject = JObject.Parse(pokeData);
 
                     JToken json_pokeName = pokeObject["species"]["name"];
+                    JToken json_pokeSprite = pokeObject["sprites"]["front_default"];
+                    JToken json_pokeType = pokeObject["types"][0]["type"]["name"];
 
-                    Pokemon pokemon = new Pokemon() { name = json_pokeName.ToString() };
+                    Pokemon pokemon = new Pokemon() { name = json_pokeName.ToString(), id = randomChooser, sprite = json_pokeSprite.ToString(), type = json_pokeType.ToString()};
 
-                    return pokemon.name;
+                    return pokemon;
                 }
                 else
-                    return null;
+                    return new Pokemon() { name = "NaN", id = 1, sprite = "null", type = "null" };
             }
         }
     }

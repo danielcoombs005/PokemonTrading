@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using External_PokemonApi;
+using static External_PokemonApi.GetPokemon;
 
 namespace PokemonTradingWebApi.Controllers
 {
@@ -13,7 +14,7 @@ namespace PokemonTradingWebApi.Controllers
     {
         // GET api/values
         [HttpGet]
-        public ActionResult<string> Get()
+        public ActionResult<Pokemon> Get()
         {
             External_PokemonApi.GetPokemon pokemon = new External_PokemonApi.GetPokemon();
             //return new string[] { "value1", "value2" };
