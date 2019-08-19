@@ -10,7 +10,6 @@ class Pokemon extends React.Component {
         }
     }
 
-    //insert fetch
     componentDidMount() {
         fetch("http://localhost:5000/api/values")
             .then(response => response.json())
