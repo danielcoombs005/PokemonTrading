@@ -11,32 +11,11 @@ class Header extends React.Component {
         this.changeLogIn = this.changeLogIn.bind(this);
     }
 
-    displayLogIn() {
-        if (this.state.showLogin) {
-            alert('changed')
-            return (
-                <form>
-                    <input type="text" name="username" value="Username" placeholder="Username" />
-                    <br/>
-                    <input type="password" value="Password" placeholder="Password" />
-                    <br/>
-                    <input type="submit" value="Log In" />
-                </form>
-            )
-        }
-    }
-
-    changeLogIn = (truthValue) => {
-        this.setState = {
-            showLogin: truthValue
-        }
-    }
-
     render() {
         return (
             <header className="header">
                 <nav className="navigate">
-                    <h1 onClick={this.changeLogIn(true)}>Login</h1>
+                    <h1 onClick={this.changeLogIn}>Login</h1>
                 </nav>
                 <h1>
                     Pokemon Trading
@@ -46,6 +25,26 @@ class Header extends React.Component {
                 </div>
             </header>
         )
+    }
+
+    displayLogIn() {
+        if (this.state.showLogin) {
+            return (
+                <form style={{border: "1px solid black"}}>
+                    <input type="text" name="username" placeholder="Username" />
+                    <br/>
+                    <input type="password" placeholder="Password" />
+                    <br/>
+                    <input type="submit" value="Log In" />
+                </form>
+            )
+        }
+    }
+
+    async changeLogIn() {
+        await this.setState({
+            showLogin: !this.state.showLogin
+        })
     }
 }
 
