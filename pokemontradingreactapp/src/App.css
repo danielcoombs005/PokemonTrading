@@ -7,6 +7,20 @@
   text-shadow: 3px 0 blue
 }
 
+div.login {
+  display: none;
+}
+
+div.login:hover {
+  display: block;
+  float:right;
+}
+
+.navigate {
+  float: right;
+  padding-right: 20px;
+}
+
 .pokebuttons {
   text-align: center;
 }

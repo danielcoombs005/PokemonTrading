@@ -24,13 +24,6 @@ class Pokemon extends React.Component {
     }
 
     fetchData = ()  => {
-        // fetch("https://localhost:5001/api/values")
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         this.setState({
-        //             pokemon: data
-        //         })
-        //     })
         Promise.all([
             fetch("https://localhost:5001/api/values"),
             fetch("https://localhost:5001/api/values"),
@@ -59,6 +52,8 @@ class Pokemon extends React.Component {
                     poke9: data9
                 }));
     }
+
+    
 
     render() {
         return (
