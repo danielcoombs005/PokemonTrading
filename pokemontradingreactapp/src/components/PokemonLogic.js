@@ -6,7 +6,7 @@ class PokemonLogic extends React.Component {
         super(props);
         this.state = {
             sprite: props.pokemon.sprite,
-            name: props.pokemon.name,
+            name: props.pokemon.name.charAt(0).toUpperCase() + props.pokemon.name.substring(1),
             type: props.pokemon.type,
             id: props.pokemon.id,
             showPopUp: false,
@@ -14,8 +14,10 @@ class PokemonLogic extends React.Component {
         }
         this.Buy = this.Buy.bind(this);
         this.BuyBG = this.BuyBG.bind(this);
+        this.BuySuccess = this.BuySuccess.bind(this);
         this.Sell = this.Sell.bind(this);
         this.SellBG = this.SellBG.bind(this);
+        this.SellSuccess = this.SellSuccess.bind(this);
         this.ShowHidePopUp = this.ShowHidePopUp.bind(this);
     }
 
@@ -27,7 +29,7 @@ class PokemonLogic extends React.Component {
                         <img id="image" src={this.state.sprite} alt={this.state.name}/>
                         <h1>Would you like to purchase {this.state.name} for {this.state.id} coins?</h1>
                         <div className="pokebuttons">
-                            <button>Ok</button>
+                            <button onClick={this.BuySuccess}>Ok</button>
                             <button onClick={this.ShowHidePopUp}>No thanks</button>
                         </div>
                     </div>
@@ -46,6 +48,11 @@ class PokemonLogic extends React.Component {
         })
     }
 
+    async BuySuccess() {
+        await this.ShowHidePopUp();
+        alert(`Congratulations on your purchase of ${this.state.name}!`)
+    }
+
     Sell(pokemon) {
         if (this.state.showPopUp && this.state.buySell==='sell') {
             return (
@@ -54,7 +61,7 @@ class PokemonLogic extends React.Component {
                         <img id="image" src={this.state.sprite} alt={this.state.name}/>
                         <h1>Would you like to sell your {this.state.name} for {Math.floor(this.state.id / 2)} coins?</h1>
                         <div className="pokebuttons">
-                            <button>Ok</button>
+                            <button onClick={this.SellSuccess}>Ok</button>
                             <button onClick={this.ShowHidePopUp}>No thanks</button>
                         </div>
                     </div>
@@ -71,6 +78,11 @@ class PokemonLogic extends React.Component {
         await this.setState({
             buySell: 'sell'
         })
+    }
+
+    async SellSuccess() {
+        await this.ShowHidePopUp();
+        alert(`Don't worry! We'll take good care of ${this.state.name}!`)
     }
 
     ShowHidePopUp() {
