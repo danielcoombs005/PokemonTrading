@@ -39,6 +39,34 @@ div.login:hover {
   padding: 20px;
 }
 
+.popup {
+  background-color: rgba(32, 167, 212);
+  border: 1px solid black;
+  bottom: 0;
+  height: 50%;
+  left: 0;
+  margin: auto;
+  padding: 10px;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 50%;
+
+}
+
+.popup-outside {
+  background-color: rgba(0, 0, 0, 0.75);
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  margin: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
 #desc {
   font-style: italic;
 }
