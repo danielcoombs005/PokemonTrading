@@ -35,7 +35,7 @@ class Pokemon extends React.Component {
         return (
             <div className ="pokemon">
                 <div className="pokemon-boxes">
-                    {listItems}
+                    {listItems} 
                 </div>
             </div>
         )
