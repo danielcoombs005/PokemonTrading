@@ -6,10 +6,12 @@ class Pokemon extends React.Component {
     constructor() {
         super();
         this.state = {
+            currency: 500,
             pokeArray: [],
             inventory: []
         }
         this.addToInventory = this.addToInventory.bind(this);
+        this.calculateCurrency = this.calculateCurrency.bind(this);
         this.removeFromInventory = this.removeFromInventory.bind(this);
     }
 
@@ -25,14 +27,26 @@ class Pokemon extends React.Component {
         }
 
         let tempArray = this.state.inventory.slice();
-        if (allowToAdd) {
-            tempArray.push(newValue);
+        if (newValue.value <= this.state.currency) {
+            alert(`Congratulations on your purchase of ${newValue.name}!`)
+            this.calculateCurrency(-newValue.value)
+            if (allowToAdd) {
+                tempArray.push(newValue);
+            } else {
+                tempArray[indexValue].qty += 1;
+            }
         } else {
-            tempArray[indexValue].qty += 1;
+            alert(`You do not have enough coins to purchase ${newValue.name}.`)
         }
 
         await this.setState({
             inventory: tempArray
+        })
+    }
+
+    calculateCurrency(value) {
+        this.setState({
+            currency: this.state.currency + value
         })
     }
 
@@ -67,6 +81,7 @@ class Pokemon extends React.Component {
         let tempArray = this.state.inventory.slice();
         if (allowToRemove) {
             alert(`Don't worry! We'll take good care of ${currentValue.name}!`);
+            this.calculateCurrency(Math.floor(currentValue.value / 2));
             if (tempArray[indexValue].qty === 1) {
                 tempArray = this.state.inventory.filter(pokemon => pokemon.name !== currentValue.name)
             } else {
@@ -88,11 +103,17 @@ class Pokemon extends React.Component {
         )
         const pokemonNames = this.state.inventory;
         let pokeListNames = pokemonNames.map((poke, index) => 
-            <p key={index}>{poke.name} ({poke.qty})</p>
+            <span key={index}>{poke.name} ({poke.qty}) </span>
         )
         return (
-            <div className ="pokemon">
+            <div className="pokemon">
+                <div className="currency">
+                    Currency: {this.state.currency}
+                    <br/>
+                </div>
+                <div className="inventory">
                     Inventory: {pokeListNames}
+                </div>
                 <div className="pokemon-boxes">
                     {listItems} 
                 </div>
