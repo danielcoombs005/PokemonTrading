@@ -33,7 +33,6 @@ class Header extends React.Component {
         await this.setState({
             showLogout: !this.state.showLogout
         })
-        console.log(this.state.showLogout)
     }
 
     checkIfUser() {
@@ -48,7 +47,6 @@ class Header extends React.Component {
                 } else {
                     break;
                 }
-                
             }
         }
     }
