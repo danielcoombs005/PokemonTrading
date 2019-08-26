@@ -5,12 +5,12 @@ class PokemonLogic extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            sprite: props.pokemon.sprite,
-            name: props.pokemon.name.charAt(0).toUpperCase() + props.pokemon.name.substring(1),
-            type: props.pokemon.type,
+            buySell: '',
             id: props.pokemon.id,
+            name: props.pokemon.name.charAt(0).toUpperCase() + props.pokemon.name.substring(1),
             showPopUp: false,
-            buySell: ''
+            sprite: props.pokemon.sprite,
+            type: props.pokemon.type,
         }
         this.Buy = this.Buy.bind(this);
         this.BuyBG = this.BuyBG.bind(this);
@@ -48,9 +48,10 @@ class PokemonLogic extends React.Component {
         })
     }
 
-    async BuySuccess() {
-        await this.ShowHidePopUp();
+    BuySuccess = () => {
         alert(`Congratulations on your purchase of ${this.state.name}!`)
+        this.ShowHidePopUp();
+        this.props.parentMethod({name: this.state.name, qty: 1});
     }
 
     Sell(pokemon) {

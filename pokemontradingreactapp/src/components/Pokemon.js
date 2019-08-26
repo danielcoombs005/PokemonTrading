@@ -6,8 +6,19 @@ class Pokemon extends React.Component {
     constructor() {
         super();
         this.state = {
-            pokeArray: []
+            pokeArray: [],
+            inventory: []
         }
+        this.addToInventory = this.addToInventory.bind(this);
+    }
+
+    async addToInventory(newValue) {
+        let tempArray = this.state.inventory.slice();
+        tempArray.push(newValue);
+        await this.setState({
+            inventory: tempArray
+        })
+        console.log(this.state.inventory)
     }
 
     async componentDidMount() {
@@ -30,10 +41,13 @@ class Pokemon extends React.Component {
     render() {
         const data = this.state.pokeArray;
         let listItems = data.map((dat, index) =>
-            <PokemonLogic pokemon={dat} key={index}/>
+            <PokemonLogic parentMethod={this.addToInventory} pokemon={dat} key={index} inventory={this.state.inventory}/>
         )
         return (
             <div className ="pokemon">
+                <div>
+                    Inventory: {this.state.inventory.name}
+                </div>
                 <div className="pokemon-boxes">
                     {listItems} 
                 </div>
