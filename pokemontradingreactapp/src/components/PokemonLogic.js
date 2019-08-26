@@ -51,7 +51,7 @@ class PokemonLogic extends React.Component {
     BuySuccess = () => {
         alert(`Congratulations on your purchase of ${this.state.name}!`)
         this.ShowHidePopUp();
-        this.props.parentMethod({name: this.state.name, qty: 1});
+        this.props.addMethod({name: this.state.name, qty: 1});
     }
 
     Sell(pokemon) {
@@ -82,8 +82,8 @@ class PokemonLogic extends React.Component {
     }
 
     async SellSuccess() {
-        await this.ShowHidePopUp();
-        alert(`Don't worry! We'll take good care of ${this.state.name}!`)
+        this.ShowHidePopUp();
+        this.props.removeMethod({name: this.state.name, qty: 1});
     }
 
     ShowHidePopUp() {
