@@ -1,10 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
 .app {
   background-color: rgb(32, 167, 212);
+}
+
+.currency {
+  color: yellow;
+  display: inline;
+  font-family: 'Press Start 2P'
 }
 
 .header {
   color: yellow;
   text-shadow: 3px 0 blue
+}
+
+.inventory {
+  color: blue;
+  display: inline;
+  font-family: 'Press Start 2P';
 }
 
 div.login {
