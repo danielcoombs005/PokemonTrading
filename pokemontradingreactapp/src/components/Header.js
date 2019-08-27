@@ -2,8 +2,8 @@ import React from 'react';
 import '../App.css'
 
 class Header extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             isLoggedIn: false,
             password: '',
@@ -44,6 +44,7 @@ class Header extends React.Component {
                         isLoggedIn: !this.state.isLoggedIn,
                         showLogin: !this.state.showLogin
                     })
+                    this.props.setUser();
                 } else {
                     break;
                 }
@@ -101,7 +102,8 @@ class Header extends React.Component {
             isLoggedIn: false,
             showLogout: false,
             username: ''
-        })
+        });
+        this.props.setUser('');
     }
 
     onChangeHandlerPassword = (event) => {

@@ -42,10 +42,14 @@ class PokemonLogic extends React.Component {
     }
 
     async BuyBG() {
-        this.ShowHidePopUp();
-        await this.setState({
-            buySell: 'buy'
-        })
+        if (this.props.getUser === '') {
+            alert('Please log in to use this feature.')
+        } else {
+            this.ShowHidePopUp();
+            await this.setState({
+                buySell: 'buy'
+            })
+        }
     }
 
     BuySuccess = () => {
@@ -74,10 +78,14 @@ class PokemonLogic extends React.Component {
     }
 
     async SellBG() {
-        this.ShowHidePopUp();
-        await this.setState({
-            buySell: 'sell'
-        })
+        if (this.props.getUser === '') {
+            alert('Please log in to use this feature.')
+        } else {
+            this.ShowHidePopUp();
+            await this.setState({
+                buySell: 'sell'
+            })
+        }
     }
 
     async SellSuccess() {
