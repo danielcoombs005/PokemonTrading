@@ -18,7 +18,6 @@ class App extends React.Component {
   }
 
   async setUsername(user) {
-    console.log('test');
     await this.setState({
       username: user
     })
