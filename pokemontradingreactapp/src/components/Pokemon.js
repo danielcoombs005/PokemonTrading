@@ -99,7 +99,7 @@ class Pokemon extends React.Component {
     render() {
         const data = this.state.pokeArray;
         let listItems = data.map((dat, index) =>
-            <PokemonLogic addMethod={this.addToInventory} removeMethod={this.removeFromInventory} getUser={this.props.getUser()} pokemon={dat} key={index} inventory={this.state.inventory}/>
+            <PokemonLogic addMethod={this.addToInventory} removeMethod={this.removeFromInventory} getUser={this.props.getUser} pokemon={dat} key={index} inventory={this.state.inventory}/>
         )
         const pokemonNames = this.state.inventory;
         let pokeListNames = pokemonNames.map((poke, index) => 

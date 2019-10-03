@@ -109,8 +109,8 @@ class PokemonLogic extends React.Component {
                     <h3 id="pkmnid">ID: {this.state.id}</h3>
 
                     <div className = "pokebuttons">
-                        <button onClick={this.BuyBG}>Buy</button>
-                        <button onClick={this.SellBG}>Sell</button>
+                        <button id='buybutton' onClick={this.BuyBG}>Buy</button>
+                        <button id='sellbutton' onClick={this.SellBG}>Sell</button>
                     </div>
                 </div>
                 <this.Buy />
